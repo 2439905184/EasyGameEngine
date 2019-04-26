@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<resources>
+		<string-array name="debugMode">
+			<item>浏览器</item>
+			<item>安卓原生</item>
+		</string-array>
+	</resources>

@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:gravity="top"
+	android:orientation="vertical"
+	android:background="#FFFDFDFD">
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:orientation="horizontal">
+
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="打开文件"
+			android:onClick="openMyFile"
+			android:id="@+id/openfile"/>
+
+		<Spinner
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:id="@+id/run"
+			android:entries="@array/debugMode"/>
+
+		<ImageView
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:src="@drawable/run"
+			android:onClick="run"/>
+
+		<ImageButton
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:src="@drawable/move"
+			android:id="@+id/move"
+			android:onClick="move"
+			android:scaleType="center"/>
+
+		<ImageButton
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:src="@drawable/rotation"
+			android:id="@+id/rotation"
+			android:onClick="rotation"
+			android:scaleType="center"/>
+
+		<ImageButton
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:src="@drawable/scale"
+			android:onClick="scale"
+			android:id="@+id/scale"
+			android:scaleType="center"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="logCat控制台输出"
+			android:onClick="openLogCat"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_height="match_parent"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:background="#FF7211DE">
+
+		<LinearLayout
+			android:layout_height="match_parent"
+			android:layout_width="wrap_content"
+			android:orientation="vertical"
+			android:background="#FF771414">
+
+			<ScrollView
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content">
+
+				<LinearLayout
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:orientation="vertical">
+
+					<TextView
+						android:layout_height="wrap_content"
+						android:layout_width="wrap_content"
+						android:text="资源管理器"
+						android:textSize="20sp"
+						android:textColor="#FF000000"/>
+
+					<ImageView
+						android:layout_height="wrap_content"
+						android:layout_width="wrap_content"
+						android:src="@drawable/floader"/>
+
+					<TextView
+						android:layout_height="wrap_content"
+						android:layout_width="wrap_content"
+						android:text="fmmnm"
+						android:textColor="#FFFFFFFF"/>
+
+					<CheckBox
+						android:layout_height="wrap_content"
+						android:layout_width="wrap_content"/>
+
+					<TextView
+						android:layout_height="wrap_content"
+						android:layout_width="wrap_content"
+						android:text="Node"
+						android:textColor="#FFFFFFFF"/>
+
+					<EditText
+						android:layout_height="wrap_content"
+						android:layout_width="match_parent"
+						android:ems="0"
+						android:hint="0"
+						android:textColor="#FFFFFFFF"
+						android:textColorHint="#FF9C9C9C"/>
+
+					<TextView
+						android:layout_height="wrap_content"
+						android:layout_width="wrap_content"
+						android:text="position"
+						android:textColor="#FFFFFFFF"/>
+
+					<TextView
+						android:layout_height="wrap_content"
+						android:layout_width="wrap_content"
+						android:text="x"
+						android:textColor="#FFFFFFFF"/>
+
+					<EditText
+						android:layout_height="wrap_content"
+						android:layout_width="wrap_content"
+						android:ems="5"
+						android:textColorHint="#FFC2C2C2"
+						android:hint="0"/>
+
+					<TextView
+						android:layout_height="wrap_content"
+						android:layout_width="wrap_content"
+						android:text="y"
+						android:textColor="#FFFFFFFF"/>
+
+					<EditText
+						android:layout_height="wrap_content"
+						android:layout_width="wrap_content"
+						android:ems="5"
+						android:hint="0"
+						android:textColorHint="#FFB6B6B6"/>
+
+					<TextView
+						android:layout_height="wrap_content"
+						android:layout_width="wrap_content"
+						android:text="Rotation"
+						android:textColor="#FFFFFFFF"/>
+
+					<EditText
+						android:layout_height="wrap_content"
+						android:layout_width="wrap_content"
+						android:ems="5"
+						android:hint="0"
+						android:textColor="#FFBFBFBF"/>
+
+				</LinearLayout>
+
+			</ScrollView>
+
+		</LinearLayout>
+
+		<RelativeLayout
+			android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			android:background="#FFCD0000"
+			android:id="@+id/mainRelativeLayout1">
+
+			<RelativeLayout
+				android:layout_height="300dp"
+				android:layout_width="74dp"
+				android:background="#FFFFFFFF"
+				android:id="@+id/canvas">
+
+				<ImageView
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:src="@drawable/ic_launcher"/>
+
+			</RelativeLayout>
+
+			<LinearLayout
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:orientation="vertical"
+				android:background="#FFECD2D2"
+				android:layout_marginTop="82dp"
+				android:layout_marginLeft="72dp"
+				android:layout_alignParentRight="true"
+				android:id="@+id/floatScript">
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:text="脚本"/>
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:text="内容"/>
+
+				<ImageView
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:src="@drawable/floader"/>
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:text="Text"/>
+
+				<ScrollView
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content">
+
+					<LinearLayout
+						android:layout_height="wrap_content"
+						android:layout_width="wrap_content"
+						android:orientation="vertical">
+
+						<LinearLayout
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content"
+							android:orientation="horizontal"
+							android:onClick="selectBackground"
+							android:id="@+id/script">
+
+							<ImageView
+								android:layout_height="wrap_content"
+								android:layout_width="wrap_content"
+								android:src="@drawable/floader"/>
+
+							<TextView
+								android:layout_height="wrap_content"
+								android:layout_width="wrap_content"
+								android:text="oop.js"/>
+
+							<ImageView
+								android:layout_height="wrap_content"
+								android:layout_width="wrap_content"
+								android:src="@drawable/rotation"/>
+
+						</LinearLayout>
+
+						<LinearLayout
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content"
+							android:orientation="horizontal">
+
+							<ImageView
+								android:layout_height="wrap_content"
+								android:layout_width="wrap_content"
+								android:src="@drawable/floader"/>
+
+						</LinearLayout>
+
+					</LinearLayout>
+
+				</ScrollView>
+
+				<ImageButton
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:src="@android:drawable/ic_menu_close_clear_cancel"/>
+
+			</LinearLayout>
+
+			<RelativeLayout
+				android:layout_height="match_parent"
+				android:layout_width="200dp"
+				android:background="#FFF28D8D"
+				android:layout_toRightOf="@id/canvas"
+				android:id="@+id/mainRelativeLayout2">
+
+				<ImageView
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:src="@drawable/ic_launcher"
+					android:id="@+id/sprite"/>
+
+			</RelativeLayout>
+
+		</RelativeLayout>
+
+	</LinearLayout>
+
+</LinearLayout>
+
