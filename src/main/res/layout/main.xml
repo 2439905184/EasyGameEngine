@@ -195,7 +195,6 @@
 				android:layout_width="wrap_content"
 				android:orientation="vertical"
 				android:background="#FFECD2D2"
-				android:layout_marginTop="82dp"
 				android:layout_marginLeft="72dp"
 				android:layout_alignParentRight="true"
 				android:id="@+id/floatScript">
@@ -290,6 +289,27 @@
 					android:id="@+id/sprite"/>
 
 			</RelativeLayout>
+
+			<LinearLayout
+				android:layout_height="match_parent"
+				android:layout_width="wrap_content"
+				android:orientation="vertical"
+				android:background="#FF7A8FE7"
+				android:layout_toRightOf="@id/mainRelativeLayout2">
+
+				<Button
+					android:layout_height="wrap_content"
+					android:layout_width="37dp"
+					android:text="+"
+					android:onClick="addNode"/>
+
+			</LinearLayout>
+
+			<Button
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:text="切换到代码编辑器测试"
+				android:onClick="toCodeEditor"/>
 
 		</RelativeLayout>
 

@@ -22,5 +22,8 @@
 			android:screenOrientation="landscape"/>
 		<activity 
 			android:name=".RunActivity"/>
+		<activity
+			android:name=".Controller"
+			/>
 	</application>
 </manifest>

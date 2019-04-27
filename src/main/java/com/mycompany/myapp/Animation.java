@@ -5,6 +5,12 @@ public class Animation
 	private String Tracks;
 	private static String State;
 	private static String LoopMode;
+	public String src;
+	//设置这个动画节点的编辑器中的动画属性
+	public void setAnimation(String real_src)
+	{
+		src=real_src;
+	}
 	/**播放动画**/
 	public void playAnimation(String name)
 	{

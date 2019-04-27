@@ -3,13 +3,58 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_height="match_parent"
 	android:layout_width="match_parent"
-	android:background="#FFD16161">
+	android:background="#FFD16161"
+	android:id="@+id/controllerRoom">
 
-	<TextView
-		android:layout_height="wrap_content"
-		android:textAppearance="?android:attr/textAppearanceLarge"
+	<RelativeLayout
+		android:layout_height="65dp"
 		android:layout_width="wrap_content"
-		android:text="Large Text"/>
+		android:background="#FFFFFFFF"
+		android:id="@+id/controllerRelativeLayout1"
+		android:layout_below="@+id/codeMode">
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_width="wrap_content"
+			android:text="方法名"
+			android:id="@+id/controllerTextView1"/>
+
+		<ImageView
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:src="@drawable/play"
+			android:layout_below="@id/controllerTextView1"
+			android:id="@+id/out"/>
+
+	</RelativeLayout>
+
+	<Switch
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:text="方块逻辑模式/代码逻辑模式"
+		android:id="@+id/codeMode"
+		android:onClick="changeCodeMode"/>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:orientation="vertical"
+		android:layout_below="@id/controllerRelativeLayout1">
+
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="+"
+			android:onClick="addMethod"/>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_width="wrap_content"
+			android:text="Large Text"/>
+
+	</LinearLayout>
 
 </RelativeLayout>
 

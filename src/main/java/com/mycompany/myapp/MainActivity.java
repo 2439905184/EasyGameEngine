@@ -8,6 +8,7 @@ import android.view.*;
 import android.view.View.*;
 import android.widget.*;
 import android.*;
+import android.content.res.*;
 public class MainActivity extends Activity{
 	//Vibrator mVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 	BitmapFactory factory;
@@ -25,6 +26,75 @@ public class MainActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 		sprite=(ImageView)findViewById(R.id.sprite);
+	}
+	//切换到代码编辑器
+	public void toCodeEditor(View v)
+	{
+		Intent i=new Intent(MainActivity.this,Controller.class);
+		startActivity(i);
+	}
+	//添加节点
+	public void addNode(View v)
+	{
+		//findViewById(R.id.)
+		AlertDialog.Builder node_list = new AlertDialog.Builder(MainActivity.this);
+		node_list.setTitle("添加节点");
+		//添加节点的实现
+		OnClickListener add_node_toEditor=new OnClickListener()
+		{
+			@Override
+			public void onClick ( View p1 ) {
+			Toast.makeText(MainActivity.this,"view按钮"+p1.toString(),Toast.LENGTH_LONG).show();
+			Context ctx=p1.getContext();
+			Resources res=ctx.getResources();
+			//CharSequence s=res.getText ( 0 );
+				Toast.makeText ( MainActivity.this, "View内容ctx" + ctx.toString ( ), Toast.LENGTH_LONG ).show ( );
+				Toast.makeText ( MainActivity.this, "res资源" + res, Toast.LENGTH_SHORT ).show ( );
+		//		Toast.makeText(MainActivity.this,"文字"+s,Toast.LENGTH_SHORT).show();
+				}
+
+			
+		};
+		ScrollView node_scroller=new ScrollView(MainActivity.this);
+		LinearLayout node_list_room= new LinearLayout(MainActivity.this);
+		node_scroller.addView(node_list_room);
+		
+		//node_list_room.set();
+		//下面全是编辑器中的节点
+		//初始化添加节点的编辑器显示
+		ButtonNode btn_Node=new ButtonNode();
+		btn_Node.setButtonText("button");
+		//摄像机节点
+		ButtonNode btn_node_camera=new ButtonNode();
+		btn_node_camera.setButtonText("摄像机");
+		//摄像机节点显示
+		Button btn_display_camera=new Button(MainActivity.this);
+		btn_display_camera.setText("摄像机");
+		btn_display_camera.setOnClickListener(add_node_toEditor);
+		node_list_room.addView(btn_display_camera);
+		//Sprite节点显示
+		Button btn=	new Button(MainActivity.this);
+		btn.setText("Sprite");
+		btn.setOnClickListener(add_node_toEditor);
+		node_list_room.addView(btn);
+		//碰撞节点显示
+		Button btn_display_collision =new Button(MainActivity.this);
+		btn_display_collision.setText("碰撞节点");
+		btn_display_collision.setOnClickListener(add_node_toEditor);
+		node_list_room.addView(btn_display_collision);
+		//音乐节点显示
+		Button btn_display_music =new Button(MainActivity.this);
+		btn_display_music.setText("音乐");
+		btn_display_music.setOnClickListener(add_node_toEditor);
+		node_list_room.addView(btn_display_music);
+		//路径节点显示
+		Button btn_display_path=new Button(MainActivity.this);
+		btn.setText("路径");
+		node_list_room.addView(btn_display_path);
+		//设置背景
+		node_list_room.setBackgroundColor(Color.BLUE);
+		node_list.setView(node_scroller);
+		node_list.show();
 	}
 	public void selectBackground(View v){
 		View selScript=findViewById(R.id.script);

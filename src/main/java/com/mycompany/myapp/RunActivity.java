@@ -20,7 +20,7 @@ public class RunActivity extends Activity
 		msg.obtain();
 		Handle_debuge.sendMessage(msg);
 		Runnable a;
-		a.run();
+	//	a.run();
 		Thread y;
 		setContentView(run);
 	}

@@ -11,7 +11,7 @@ import android.view.*;
 import android.content.*;
 import android.view.SurfaceHolder.*;
 import android.widget.*;
-//实现的surface渲染类
+//实现的surface渲染类 核心类
 public class Run extends SurfaceView //implements SurfaceHolder
 {
 
@@ -73,7 +73,71 @@ public class Run extends SurfaceView //implements SurfaceHolder
 			
 		}
 	}
-
+	//画路径 在编辑器中使用
+	public void drawPath(Canvas canvas)
+	{
+		Paint pen=new Paint();
+		Path path= new Path();
+		//path.addArc();
+		canvas.drawPath(path,pen);
+	}
+	//画精灵图
+	public void drawSprite(Canvas canvas,int x,int y)
+	{
+		Paint pen=new Paint();
+		int top =4;
+		int left=4;
+		canvas.drawBitmap(null,top,left,pen);	
+	}
+	//画方框 底层封装
+	public void drawRect(Canvas canvas,int x,int y,String color)
+	{
+		Paint pen= new Paint();
+		if(color.equals(MyColor.Red))
+		{
+			pen.setColor(Color.RED);
+		}
+		if(color.equals(MyColor.Black))
+		{
+			pen.setColor(Color.BLACK);
+		}
+		Rect rect=new Rect();
+		int left=4;
+		int top=4;
+		int right=4;
+		int bottom=4;
+		rect.set(left,top,right,bottom);
+		canvas.drawRect(rect,pen);
+	}
+	//底层画文字
+	public void drawText(Canvas canvas,String text,float x,float y,String color,String size)
+	{
+		Paint pen =new Paint();
+		//pen.setStyle(Paint.Style.STROKE);
+		canvas.drawText(text,x,y,pen);
+	}
+	//画线
+	public void drawLine(Canvas canvas,float startX,float startY,float endX,float endY,float width,String color)
+	{
+		Paint pen=new Paint();
+		if(color.equals(MyColor.Red))
+		{
+			pen.setColor(Color.RED);
+		}
+		width=1.0f;//默认宽度1
+		pen.setStrokeWidth(width);
+		canvas.drawLine(startX,endX,startY,endY,pen);
+	}
+	//画圆
+	public void drawCircle(Canvas canvas,String color,float cx,float cy,float radius)
+	{
+		Paint pen= new Paint();
+		if(color.equals(MyColor.Red))
+		{
+			pen.setColor(Color.RED);
+		}
+		canvas.drawCircle(cx,cy,radius,pen);
+	}
 	@Override
 	protected void onMeasure ( int widthMeasureSpec, int heightMeasureSpec )
 	{
