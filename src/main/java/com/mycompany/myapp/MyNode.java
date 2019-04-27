@@ -2,20 +2,20 @@ package com.mycompany.myapp;
 import android.annotation.*;
 import android.graphics.*;
 import android.transition.*;
-
+//节点类 无位置 底层抽象类
 public class MyNode
 {
+	//public  movePath node;
 	public static MyNode src;
 	public static MyNode index;
 	public static MyNode posation;
+	public static MyNode node;
 	public String name;
 	public String path;
-	public static int x;
-	public static int y;
 	public static float scale;
 	public static float width;
 	public static float height;
-	public static String parent;
+	public static MyNode parent;
 	public static boolean hide;
 	//中心点
 	public static float archerX;
@@ -31,6 +31,10 @@ public class MyNode
 	public static void onUpdate()
 	{
 	
+	}
+	public MyNode getNodeByName(String name)
+	{
+		return MyNode.node;
 	}
 	/**设置中心点位置**/
 	public static void setArcherPosation(float X,float Y)
@@ -51,7 +55,14 @@ public class MyNode
 		}
 	}
 	/**设置旋转角度**/
+	//世界坐标系
 	public static void setRotation(float deg)
+	{
+		MyNode.Rotation_deg=deg;
+	}
+	//设置本地旋转
+	//本地坐标系
+	public static void set_Local_Rotation(float deg)
 	{
 		MyNode.Rotation_deg=deg;
 	}
@@ -68,8 +79,8 @@ public class MyNode
 	/**设置位置int类型**/
 	public void setPostation(int x,int y)
 	{
-		MyNode.x=this.x;
-		MyNode.y=this.y;
+	/*	MyNode.x=this.x;
+		MyNode.y=this.y;*/
 	}
 	/**改变Node的图层位置**/
 	public void change_Layer(int index)
@@ -79,24 +90,24 @@ public class MyNode
 	/**设置父节点**/
 	public static void setParent(String parent)
 	{
-		MyNode.parent=parent;
+		//MyNode.parent=parent;
 	}
 	/**获取父节点**/
-	public static String getParent(String name)
+	public static MyNode getParentNode(String name)
 	{
-		return name;
+		return MyNode.parent;
 	}
 	/**获得指定索引的子节点**/
-	public static MyNode getChild(int index)
+	/*public static MyNode getChildNode(int index)
 	{
 		//return Node a;
-		return null;
-	}
+		//return ;
+	}*/
 	/**移动Node节点的位置**/
 	public void moveTo(int x,int y)
 	{
-		MyNode.x=this.x;
-		MyNode.y=this.y;
+		/*MyNode.x=this.x;
+		MyNode.y=this.y;*/
 	}
 	/**销毁Node节点**/
 	public static  void deleate(String name)

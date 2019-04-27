@@ -1,7 +1,10 @@
 package com.mycompany.myapp;
+import android.net.http.*;
 
 public class Sprite extends MyNode
 {
+	public static int x;
+	public static int y;
 	private static String Path;
 	/*public void setImage ( String path )
 	{
